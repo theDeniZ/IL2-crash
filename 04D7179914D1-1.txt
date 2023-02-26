@@ -1,0 +1,280 @@
+Incident Identifier: 9492F5A0-26C5-4E77-A82D-620A42267AA3
+CrashReporter Key:   4ad293f1c43ae8183e5620e15636700232764826
+Hardware Model:      iPhone13,4
+Process:             SpringBoard [3278]
+Path:                /System/Library/CoreServices/SpringBoard.app/SpringBoard
+Identifier:          com.apple.springboard
+Version:             1.0 (50)
+Code Type:           ARM-64 (Native)
+Role:                Foreground
+Parent Process:      launchd [1]
+Coalition:           com.apple.springboard [73]
+
+Date/Time:           2023-02-26 13:13:42.7969 +0100
+Launch Time:         2023-02-26 13:13:34.3218 +0100
+OS Version:          iPhone OS 15.1.1 (19B81)
+Release Type:        User
+Baseband Version:    2.11.04
+Report Version:      104
+
+Exception Type:  EXC_GUARD (SIGKILL)
+Exception Subtype: GUARD_TYPE_MACH_PORT
+Exception Message:  INVALID_RIGHT on mach port 211539 (guarded with 0x0000000000000000)
+Exception Codes: 0x0000000000033a53, 0x0000000000000000
+Exception Note:  EXC_CORPSE_NOTIFY
+Termination Reason: GUARD 2305844108725533267 
+
+Triggered by Thread:  12
+
+Application Specific Information:
+
+
+
+Thread 0 name:   Dispatch queue: com.apple.main-thread
+Thread 0:
+0   libobjc.A.dylib               	       0x1994e9678 objc_msgSend + 184
+1   BaseBoard                     	       0x186288954 -[BSEventQueue _removeEventQueueLock:] + 72
+2   BaseBoard                     	       0x1862a4fe8 -[BSEventQueue relinquishLock:] + 92
+3   BaseBoard                     	       0x1862919fc -[BSEventQueue _processNextEvent] + 348
+4   BaseBoard                     	       0x18628dcc4 -[BSEventQueue executeOrInsertEvents:atPosition:] + 596
+5   BaseBoard                     	       0x1862861d8 -[BSEventQueue executeOrInsertEvent:atPosition:] + 128
+6   FrontBoard                    	       0x1aabbbb8c -[FBSceneWorkspace _executeNextIdleEventIfAppropriate] + 312
+7   FrontBoard                    	       0x1aabc379c -[FBSceneWorkspace _executeEventWhenIdle:] + 108
+8   FrontBoard                    	       0x1aabe919c -[FBSceneWorkspace scene:didUpdateClientSettingsWithDiff:oldClientSettings:transitionContext:] + 564
+9   FrontBoard                    	       0x1aabbc070 __69-[FBScene client:didUpdateClientSettings:withDiff:transitionContext:]_block_invoke + 204
+10  FrontBoard                    	       0x1aabbb974 -[FBScene _dispatchClientMessageWithBlock:] + 88
+11  FrontBoard                    	       0x1aabc995c -[FBScene client:didUpdateClientSettings:withDiff:transitionContext:] + 188
+12  FrontBoard                    	       0x1aabc7ca8 -[FBLocalSynchronousSceneClientProvider scene:didUpdateClientSettings:withDiff:transitionContext:] + 232
+13  FrontBoardServices            	       0x192975fbc -[FBSScene _calloutQueue_comsumeLock_updateClientSettings:withTransitionContext:] + 608
+14  FrontBoardServices            	       0x192964a60 -[FBSScene detachLayer:] + 364
+15  UIKitCore                     	       0x1836c0318 -[_UIFBSSceneSubstrate detachContext:] + 128
+16  UIKitCore                     	       0x183448cd4 __UIContextBinderDetachContext + 232
+17  UIKitCore                     	       0x1836f0944 -[_UIContextBinder detachBindable:] + 252
+18  UIKitCore                     	       0x1834f2298 -[UIWindowScene _windowUpdatedVisibility:] + 372
+19  UIKitCore                     	       0x1834b1d84 -[UIWindow _updateLayerOrderingAndSetLayerHidden:actionBlock:] + 204
+20  UIKitCore                     	       0x183548ee4 -[UIWindow _setHidden:forced:] + 120
+21  InstaLauncher2.dylib          	       0x1057c69f8 0x1057c0000 + 27128
+22  InstaLauncher2.dylib          	       0x1057c5544 0x1057c0000 + 21828
+23  SpringBoard                   	       0x1adcb906c -[SpringBoard _handleApplicationProcessStateDidChangeNotification:] + 60
+24  CoreFoundation                	       0x180e1aed8 __CFNOTIFICATIONCENTER_IS_CALLING_OUT_TO_AN_OBSERVER__ + 28
+25  CoreFoundation                	       0x180eb6b8c ___CFXRegistrationPost_block_invoke + 52
+26  CoreFoundation                	       0x180e89f44 _CFXRegistrationPost + 456
+27  CoreFoundation                	       0x180e30d44 _CFXNotificationPost + 716
+28  Foundation                    	       0x18262c628 -[NSNotificationCenter postNotificationName:object:userInfo:] + 96
+29  SpringBoard                   	       0x1adc344a4 -[SBApplication _updateProcess:withState:] + 540
+30  AXSpringBoardServerInstance   	       0x1c0d99f6c -[AXSB_SBApplicationSafeCategory _updateProcess:withState:] + 368
+31  SpringBoard                   	       0x1adc3423c -[SBApplication _noteProcess:didChangeToState:] + 92
+32  SpringBoard                   	       0x1adce4f10 __59-[SBMainWorkspace process:stateDidChangeFromState:toState:]_block_invoke + 136
+33  libdispatch.dylib             	       0x180af9914 _dispatch_call_block_and_release + 32
+34  libdispatch.dylib             	       0x180afb660 _dispatch_client_callout + 20
+35  libdispatch.dylib             	       0x180b09b60 _dispatch_main_queue_callback_4CF + 944
+36  CoreFoundation                	       0x180e41cd4 __CFRUNLOOP_IS_SERVICING_THE_MAIN_DISPATCH_QUEUE__ + 16
+37  CoreFoundation                	       0x180dfbeac __CFRunLoopRun + 2540
+38  CoreFoundation                	       0x180e0f3b8 CFRunLoopRunSpecific + 600
+39  GraphicsServices              	       0x19c79f38c GSEventRunModal + 164
+40  UIKitCore                     	       0x1837af6a8 -[UIApplication _run] + 1100
+41  UIKitCore                     	       0x18352e7f4 UIApplicationMain + 2092
+42  SpringBoard                   	       0x1adc99730 SBSystemAppMain + 6564
+43  dyld                          	       0x1044e9a24 start + 520
+
+Thread 1:
+0   libsystem_pthread.dylib       	       0x1f1a11e8c start_wqthread + 0
+
+Thread 2:
+0   libsystem_pthread.dylib       	       0x1f1a11e8c start_wqthread + 0
+
+Thread 3:
+0   libsystem_pthread.dylib       	       0x1f1a11e8c start_wqthread + 0
+
+Thread 4:
+0   libsystem_pthread.dylib       	       0x1f1a11e8c start_wqthread + 0
+
+Thread 5:
+0   libsystem_pthread.dylib       	       0x1f1a11e8c start_wqthread + 0
+
+Thread 6:
+0   libsystem_pthread.dylib       	       0x1f1a11e8c start_wqthread + 0
+
+Thread 7:
+0   libsystem_pthread.dylib       	       0x1f1a11e8c start_wqthread + 0
+
+Thread 8:
+0   libsystem_pthread.dylib       	       0x1f1a11e8c start_wqthread + 0
+
+Thread 9 name:  com.apple.uikit.eventfetch-thread
+Thread 9:
+0   libsystem_kernel.dylib        	       0x1b7e28504 mach_msg_trap + 8
+1   libsystem_kernel.dylib        	       0x1b7e28b9c mach_msg + 76
+2   CoreFoundation                	       0x180df7688 __CFRunLoopServiceMachPort + 372
+3   CoreFoundation                	       0x180dfb97c __CFRunLoopRun + 1212
+4   CoreFoundation                	       0x180e0f3b8 CFRunLoopRunSpecific + 600
+5   Foundation                    	       0x18262a354 -[NSRunLoop(NSRunLoop) runMode:beforeDate:] + 236
+6   Foundation                    	       0x18266bc28 -[NSRunLoop(NSRunLoop) runUntilDate:] + 92
+7   UIKitCore                     	       0x1837288a4 -[UIEventFetcher threadMain] + 524
+8   Foundation                    	       0x18267a36c __NSThread__start__ + 808
+9   libsystem_pthread.dylib       	       0x1f1a129a4 _pthread_start + 148
+10  libsystem_pthread.dylib       	       0x1f1a11ea0 thread_start + 8
+
+Thread 10 name:  com.apple.CoreMotion.MotionThread
+Thread 10:
+0   libsystem_kernel.dylib        	       0x1b7e28504 mach_msg_trap + 8
+1   libsystem_kernel.dylib        	       0x1b7e28b9c mach_msg + 76
+2   CoreFoundation                	       0x180df7688 __CFRunLoopServiceMachPort + 372
+3   CoreFoundation                	       0x180dfb97c __CFRunLoopRun + 1212
+4   CoreFoundation                	       0x180e0f3b8 CFRunLoopRunSpecific + 600
+5   CoreFoundation                	       0x180e8fa78 CFRunLoopRun + 64
+6   CoreMotion                    	       0x18ddef544 0x18dddc000 + 79172
+7   libsystem_pthread.dylib       	       0x1f1a129a4 _pthread_start + 148
+8   libsystem_pthread.dylib       	       0x1f1a11ea0 thread_start + 8
+
+Thread 11 name:  SBWiFiManager callback thread
+Thread 11:
+0   libsystem_kernel.dylib        	       0x1b7e28504 mach_msg_trap + 8
+1   libsystem_kernel.dylib        	       0x1b7e28b9c mach_msg + 76
+2   CoreFoundation                	       0x180df7688 __CFRunLoopServiceMachPort + 372
+3   CoreFoundation                	       0x180dfb97c __CFRunLoopRun + 1212
+4   CoreFoundation                	       0x180e0f3b8 CFRunLoopRunSpecific + 600
+5   Foundation                    	       0x18262a354 -[NSRunLoop(NSRunLoop) runMode:beforeDate:] + 236
+6   Foundation                    	       0x18262ab10 -[NSRunLoop(NSRunLoop) run] + 92
+7   SpringBoard                   	       0x1adddd59c -[SBWiFiManager _runManagerCallbackThread] + 268
+8   Foundation                    	       0x18267a36c __NSThread__start__ + 808
+9   libsystem_pthread.dylib       	       0x1f1a129a4 _pthread_start + 148
+10  libsystem_pthread.dylib       	       0x1f1a11ea0 thread_start + 8
+
+Thread 12 name:   Dispatch queue: com.apple.frontboard.process.call-out
+Thread 12 Crashed:
+0   libsystem_kernel.dylib        	       0x1b7e28474 _kernelrpc_mach_port_deallocate_trap + 8
+1   libsystem_kernel.dylib        	       0x1b7e294d8 mach_port_deallocate + 28
+2   librocketbootstrap.dylib      	       0x10577115c 0x10576c000 + 20828
+3   libapplist.dylib              	       0x1057a1c14 0x10579c000 + 23572
+4   libapplist.dylib              	       0x1057a2bac 0x10579c000 + 27564
+5   libapplist.dylib              	       0x1057a4a74 0x10579c000 + 35444
+6   libapplist.dylib              	       0x1057a2e80 0x10579c000 + 28288
+7   InstaLauncher2.dylib          	       0x1057c8700 0x1057c0000 + 34560
+8   InstaLauncher2.dylib          	       0x1057c56d8 0x1057c0000 + 22232
+9   FrontBoard                    	       0x1aabf48d4 -[FBProcessObserver process:stateDidChangeFromState:toState:] + 136
+10  FrontBoard                    	       0x1aabc9d40 __35-[FBProcess _updateStateWithBlock:]_block_invoke + 256
+11  libdispatch.dylib             	       0x180af9914 _dispatch_call_block_and_release + 32
+12  libdispatch.dylib             	       0x180afb660 _dispatch_client_callout + 20
+13  libdispatch.dylib             	       0x180b02de4 _dispatch_lane_serial_drain + 672
+14  libdispatch.dylib             	       0x180b0398c _dispatch_lane_invoke + 444
+15  libdispatch.dylib             	       0x180b0e1a8 _dispatch_workloop_worker_thread + 656
+16  libsystem_pthread.dylib       	       0x1f1a120f4 _pthread_wqthread + 288
+17  libsystem_pthread.dylib       	       0x1f1a11e94 start_wqthread + 8
+
+Thread 13 name:  CommonUtilities-WiFi-Thread
+Thread 13:
+0   libsystem_kernel.dylib        	       0x1b7e28504 mach_msg_trap + 8
+1   libsystem_kernel.dylib        	       0x1b7e28b9c mach_msg + 76
+2   CoreFoundation                	       0x180df7688 __CFRunLoopServiceMachPort + 372
+3   CoreFoundation                	       0x180dfb97c __CFRunLoopRun + 1212
+4   CoreFoundation                	       0x180e0f3b8 CFRunLoopRunSpecific + 600
+5   CoreFoundation                	       0x180e8fa78 CFRunLoopRun + 64
+6   CommonUtilities               	       0x1924c8ed0 0x1924b9000 + 65232
+7   Foundation                    	       0x18267a36c __NSThread__start__ + 808
+8   libsystem_pthread.dylib       	       0x1f1a129a4 _pthread_start + 148
+9   libsystem_pthread.dylib       	       0x1f1a11ea0 thread_start + 8
+
+Thread 14:
+0   libsystem_pthread.dylib       	       0x1f1a11e8c start_wqthread + 0
+
+Thread 15 name:  AVAudioSession Notify Thread
+Thread 15:
+0   libsystem_kernel.dylib        	       0x1b7e28504 mach_msg_trap + 8
+1   libsystem_kernel.dylib        	       0x1b7e28b9c mach_msg + 76
+2   CoreFoundation                	       0x180df7688 __CFRunLoopServiceMachPort + 372
+3   CoreFoundation                	       0x180dfb97c __CFRunLoopRun + 1212
+4   CoreFoundation                	       0x180e0f3b8 CFRunLoopRunSpecific + 600
+5   AudioSession                  	       0x18a1a3308 CADeprecated::GenericRunLoopThread::Entry(void*) + 164
+6   AudioSession                  	       0x18a1acd64 CADeprecated::CAPThread::Entry(CADeprecated::CAPThread*) + 92
+7   libsystem_pthread.dylib       	       0x1f1a129a4 _pthread_start + 148
+8   libsystem_pthread.dylib       	       0x1f1a11ea0 thread_start + 8
+
+Thread 16 name:  WFWiFiStateMonitor callback thread
+Thread 16:
+0   libsystem_kernel.dylib        	       0x1b7e28504 mach_msg_trap + 8
+1   libsystem_kernel.dylib        	       0x1b7e28b9c mach_msg + 76
+2   CoreFoundation                	       0x180df7688 __CFRunLoopServiceMachPort + 372
+3   CoreFoundation                	       0x180dfb97c __CFRunLoopRun + 1212
+4   CoreFoundation                	       0x180e0f3b8 CFRunLoopRunSpecific + 600
+5   Foundation                    	       0x18262a354 -[NSRunLoop(NSRunLoop) runMode:beforeDate:] + 236
+6   Foundation                    	       0x18262ab10 -[NSRunLoop(NSRunLoop) run] + 92
+7   WiFiKit                       	       0x1bb42b8ec -[WFWiFiStateMonitor _runManagerCallbackThread] + 280
+8   Foundation                    	       0x18267a36c __NSThread__start__ + 808
+9   libsystem_pthread.dylib       	       0x1f1a129a4 _pthread_start + 148
+10  libsystem_pthread.dylib       	       0x1f1a11ea0 thread_start + 8
+
+Thread 17 name:  WFPersonalHotspotStateMonitor callback thread
+Thread 17:
+0   libsystem_kernel.dylib        	       0x1b7e28504 mach_msg_trap + 8
+1   libsystem_kernel.dylib        	       0x1b7e28b9c mach_msg + 76
+2   CoreFoundation                	       0x180df7688 __CFRunLoopServiceMachPort + 372
+3   CoreFoundation                	       0x180dfb97c __CFRunLoopRun + 1212
+4   CoreFoundation                	       0x180e0f3b8 CFRunLoopRunSpecific + 600
+5   Foundation                    	       0x18262a354 -[NSRunLoop(NSRunLoop) runMode:beforeDate:] + 236
+6   Foundation                    	       0x18262ab10 -[NSRunLoop(NSRunLoop) run] + 92
+7   WiFiKit                       	       0x1bb43df0c -[WFPersonalHotspotStateMonitor _runManagerCallbackThread] + 448
+8   Foundation                    	       0x18267a36c __NSThread__start__ + 808
+9   libsystem_pthread.dylib       	       0x1f1a129a4 _pthread_start + 148
+10  libsystem_pthread.dylib       	       0x1f1a11ea0 thread_start + 8
+
+Thread 18 name:   Dispatch queue: RBSProcessMonitorCalloutQueue
+Thread 18:
+0   libsystem_kernel.dylib        	       0x1b7e28e38 __bsdthread_ctl + 8
+1   libsystem_pthread.dylib       	       0x1f1a12334 _pthread_set_properties_self + 148
+2   libdispatch.dylib             	       0x180afdcf0 _dispatch_set_priority_and_mach_voucher_slow + 164
+3   libdispatch.dylib             	       0x180afde94 _dispatch_set_priority_and_voucher_slow + 204
+4   libdispatch.dylib             	       0x180b02f18 _dispatch_lane_serial_drain + 980
+5   libdispatch.dylib             	       0x180b0398c _dispatch_lane_invoke + 444
+6   libdispatch.dylib             	       0x180b04c74 _dispatch_workloop_invoke + 1796
+7   libdispatch.dylib             	       0x180b0e1a8 _dispatch_workloop_worker_thread + 656
+8   libsystem_pthread.dylib       	       0x1f1a120f4 _pthread_wqthread + 288
+9   libsystem_pthread.dylib       	       0x1f1a11e94 start_wqthread + 8
+
+Thread 19 name:  com.apple.UIKit.inProcessAnimationManager
+Thread 19:
+0   libsystem_kernel.dylib        	       0x1b7e28540 semaphore_wait_trap + 8
+1   libdispatch.dylib             	       0x180afbbf0 _dispatch_sema4_wait + 28
+2   libdispatch.dylib             	       0x180afc2a8 _dispatch_semaphore_wait_slow + 132
+3   UIKitCore                     	       0x183556b88 __66-[UIViewInProcessAnimationManager startAdvancingAnimationManager:]_block_invoke_3 + 192
+4   Foundation                    	       0x18267a36c __NSThread__start__ + 808
+5   libsystem_pthread.dylib       	       0x1f1a129a4 _pthread_start + 148
+6   libsystem_pthread.dylib       	       0x1f1a11ea0 thread_start + 8
+
+
+Thread 12 crashed with ARM Thread State (64-bit):
+    x0: 0x0000000000000011   x1: 0x0000000000033a53   x2: 0x0000000000000034   x3: 0x0000000000000034
+    x4: 0x0000000000033a53   x5: 0x000000000000012c   x6: 0x0000000000000000   x7: 0x00000000000003d0
+    x8: 0x0000000010000003   x9: 0x0000000000033a53  x10: 0x00000000000007fd  x11: 0x0000000000000001
+   x12: 0x0000000000000072  x13: 0x00000000be80d858  x14: 0x00000000bea0e000  x15: 0x000000000000e000
+   x16: 0xffffffffffffffee  x17: 0x000000010577c150  x18: 0x0000000000000000  x19: 0x0000000000033a53
+   x20: 0x0000000000000203  x21: 0x0000000000000203  x22: 0x0000000000000001  x23: 0x000000016c4712d0
+   x24: 0x000000016c471310  x25: 0x00000001dad0802c  x26: 0x00000001057aca08  x27: 0x0000000000000707
+   x28: 0x0000000000000203   fp: 0x000000016c4712c0   lr: 0x00000001b7e294d8
+    sp: 0x000000016c4712b0   pc: 0x00000001b7e28474 cpsr: 0x80001000
+   far: 0x0000000101c84000  esr: 0x56000080  Address size fault
+
+Binary Images:
+       0x1994e8000 -        0x199521fff libobjc.A.dylib arm64e  <10fa90c6dfe538aeb3dc2251181cc272> /usr/lib/libobjc.A.dylib
+       0x186280000 -        0x18633cfff BaseBoard arm64e  <4b2c0da0070a3d6f911fb253184c0037> /System/Library/PrivateFrameworks/BaseBoard.framework/BaseBoard
+       0x1aabb9000 -        0x1aac62fff FrontBoard arm64e  <a1a703d5cd2e3e629ca006af10a806d4> /System/Library/PrivateFrameworks/FrontBoard.framework/FrontBoard
+       0x192957000 -        0x192a02fff FrontBoardServices arm64e  <6fdec0c3e5003e06948ee34bda520801> /System/Library/PrivateFrameworks/FrontBoardServices.framework/FrontBoardServices
+       0x183296000 -        0x184b1afff UIKitCore arm64e  <8388eb03002b3b35a78a6a022894292e> /System/Library/PrivateFrameworks/UIKitCore.framework/UIKitCore
+       0x1057c0000 -        0x1057dbfff InstaLauncher2.dylib arm64e  <a110135595403a68abd3e848ffcfd0d3> /private/preboot/8CE2496B17F2D9758833FF70374C138D71F28D3FD5992DE4A9777C0ED66C2A00AF66039190CFC2B338051B5E5F0AD5AC/procursus/Library/MobileSubstrate/DynamicLibraries/InstaLauncher2.dylib
+       0x1adbba000 -        0x1ae5defff SpringBoard arm64e  <1f65bed825da33e9992c579ccdf34265> /System/Library/PrivateFrameworks/SpringBoard.framework/SpringBoard
+       0x180df0000 -        0x181243fff CoreFoundation arm64e  <b2d21cfd378c36d5baf73f70599cfefc> /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
+       0x182612000 -        0x182917fff Foundation arm64e  <d59c69755af237bc93be43b80b4293a5> /System/Library/Frameworks/Foundation.framework/Foundation
+       0x1c0d97000 -        0x1c0de8fff AXSpringBoardServerInstance arm64e  <6eae9059997f3d169bde90994d9a04e6> /System/Library/PrivateFrameworks/AXSpringBoardServerInstance.framework/AXSpringBoardServerInstance
+       0x180af7000 -        0x180b3dfff libdispatch.dylib arm64e  <a5cbaab3e3893548baacfab18411b94a> /usr/lib/system/libdispatch.dylib
+       0x19c79e000 -        0x19c7a6fff GraphicsServices arm64e  <44e4515eb18737f18fe028e7b087daf5> /System/Library/PrivateFrameworks/GraphicsServices.framework/GraphicsServices
+       0x1044d0000 -        0x104527fff dyld arm64e  <c21dba379df93fc7b286734030e18bb1> /usr/lib/dyld
+       0x1f1a11000 -        0x1f1a1cfff libsystem_pthread.dylib arm64e  <1a4a45fd1bb639df84140590ce103717> /usr/lib/system/libsystem_pthread.dylib
+       0x1b7e27000 -        0x1b7e5afff libsystem_kernel.dylib arm64e  <b1b942de75903c61980a19d80ed4da37> /usr/lib/system/libsystem_kernel.dylib
+       0x18dddc000 -        0x18e0e8fff CoreMotion arm64e  <7464cd4b1ec7342392ce51becea40ca3> /System/Library/Frameworks/CoreMotion.framework/CoreMotion
+       0x10576c000 -        0x105777fff librocketbootstrap.dylib arm64e  <7f108f1f9c65309099910773fee4a010> /private/preboot/8CE2496B17F2D9758833FF70374C138D71F28D3FD5992DE4A9777C0ED66C2A00AF66039190CFC2B338051B5E5F0AD5AC/procursus/usr/lib/librocketbootstrap.dylib
+       0x10579c000 -        0x1057abfff libapplist.dylib arm64e  <cce26434d6333913aca05957d40ae348> /private/preboot/8CE2496B17F2D9758833FF70374C138D71F28D3FD5992DE4A9777C0ED66C2A00AF66039190CFC2B338051B5E5F0AD5AC/procursus/usr/lib/libapplist.dylib
+       0x1924b9000 -        0x1924d7fff CommonUtilities arm64e  <4621e86974c231f2bcf63eba8fe402b9> /System/Library/PrivateFrameworks/CommonUtilities.framework/CommonUtilities
+       0x18a19d000 -        0x18a1c6fff AudioSession arm64e  <99ff741f34943edf82b7c03c916ebad3> /System/Library/PrivateFrameworks/AudioSession.framework/AudioSession
+       0x1bb3c7000 -        0x1bb4a1fff WiFiKit arm64e  <2a5c5fa1d19c3f4ab2e85409ed627e8f> /System/Library/PrivateFrameworks/WiFiKit.framework/WiFiKit
+
+EOF
